@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter&family=Nunito&family=Oswald:wght@400;500&display=swap");
+* {
+  background-color: #0f0e17;
+}
+body {
+  margin: 0;
+  font-family: Inter;
+}

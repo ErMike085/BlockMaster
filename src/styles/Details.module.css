@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter&family=Nunito&family=Oswald:wght@400;500&display=swap");
+.detailsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+p {
+  font-family: Inter;
+  color: white;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 30px;
+}
+
+.Columns {
+  max-width: 425px;
+  margin: 1rem;
+}
+
+.image {
+  border-radius: 10px;
+  max-height: 300px;
+}
+
+.list {
+  display: inline-flex;
+}
+
+.listItem {
+  margin: 0 12.5px;
+}
+
+.listItem1 {
+  margin-right: 12.5px;
+}

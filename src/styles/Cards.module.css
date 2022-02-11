@@ -1,0 +1,14 @@
+.Cards:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.movieImage {
+  border-radius: 10px;
+}
+
+@media (max-width: 500px) {
+  .movieImage {
+    width: 90%;
+  }
+}
