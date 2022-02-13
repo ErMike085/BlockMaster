@@ -1,25 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getSearch } from "../helpers/getData";
 import styles from "../styles/Navbar.module.css";
 
-const Navbar = ({ setMovie }) => {
-  const [search, setSearch] = useState();
-
+const Navbar = ({ setMovie, search, setSearch }) => {
   const buscarDatos = async () => {
     const datos = await getSearch(search);
-    setMovie(datos);
+    setMovie(datos.results);
   };
 
   const handleChange = ({ target }) => {
-    setSearch(target.value);
+    if (target.value !== "") {
+      setSearch(target.value);
+    } else {
+      setSearch(null);
+    }
   };
 
-  console.log(search);
   useEffect(() => {
     if (search) {
       buscarDatos();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
 
   return (
@@ -28,7 +30,7 @@ const Navbar = ({ setMovie }) => {
         <img src="https://res.cloudinary.com/dpv7hhumv/image/upload/v1639081600/logo-blockBuster_sac9pr.svg" alt="" className="float" />
       </Link>
       <div className="">
-        <div className={`${styles.navcontainer}`}>
+        <div className={`${styles.navLinks}`}>
           <Link className="nav-link text-warning " to="/">
             Todas
           </Link>
@@ -46,6 +48,9 @@ const Navbar = ({ setMovie }) => {
           <button className="text-warning">Buscar</button>
         </form>
       </div>
+      <Link className="nav-link text-warning" to="/recomendaciones">
+        Haz tu recomendación
+      </Link>
     </nav>
   );
 };

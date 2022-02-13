@@ -1,6 +1,7 @@
 // Url peliculas temporada https://api.themoviedb.org/3/discover/movie?api_key=a049d6086798142f1ce78897272be805&language=es
 // Url buscar peliculas https://api.themoviedb.org/3/search/movie?query=hola&api_key=a049d6086798142f1ce78897272be805&language=es
 // Traer video de la película https://api.themoviedb.org/3/movie/51/videos?api_key=a049d6086798142f1ce78897272be805&language=es
+// más valoradas https://api.themoviedb.org/3/discover/movie?api_key=a049d6086798142f1ce78897272be805&language=es&sort_by=vote_average.desc&page=5
 const tempoMovies = "https://api.themoviedb.org/3/discover/movie?api_key=a049d6086798142f1ce78897272be805&language=es&page=";
 const searchUno = "https://api.themoviedb.org/3/search/movie?query=";
 const searchDos = "&api_key=a049d6086798142f1ce78897272be805&language=es";

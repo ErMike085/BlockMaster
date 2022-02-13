@@ -8,7 +8,6 @@ const Details = (movie) => {
   //   minutos = minutos % 60;
   //   return [horas, "h ", minutos, "m"];
   // };
-  console.log(id);
   return (
     <div
       className="modal"

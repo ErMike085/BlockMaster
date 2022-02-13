@@ -3,4 +3,9 @@
   justify-content: space-between;
   padding: 0 4rem;
   align-items: center;
+  margin-bottom: 2rem;
+}
+
+.navLinks {
+  display: flex;
 }

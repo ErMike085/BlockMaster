@@ -12,7 +12,6 @@ const Cards = ({ movie }) => {
     setVideoUrl(video);
   };
 
-  console.log(videoUrl);
   useEffect(() => {
     traerVideos();
     // eslint-disable-next-line react-hooks/exhaustive-deps
