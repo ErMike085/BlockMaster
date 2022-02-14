@@ -5,6 +5,7 @@ import Trailers from "../components/Trailers";
 import Home from "../containers/Home";
 import MasValoradas from "../containers/MasValoradas";
 import MenosValoradas from "../containers/MenosValoradas";
+import Recomendaciones from "../containers/Recomendaciones";
 
 export const PanelRutasPrivadas = ({ movie, setMovie, search, setSearch, page, setPage }) => {
   return (
@@ -21,6 +22,7 @@ export const PanelRutasPrivadas = ({ movie, setMovie, search, setSearch, page, s
           element={<MenosValoradas movie={movie} setMovie={setMovie} search={search} page={page} setPage={setPage} />}
         />
         <Route path="/trailer/:id" element={<Trailers />} />
+        <Route path="/recomendaciones" element={<Recomendaciones />} />
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </div>

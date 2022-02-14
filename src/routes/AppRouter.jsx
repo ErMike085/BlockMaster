@@ -11,7 +11,7 @@ const AppRouter = () => {
   const [movie, setMovie] = useState([]);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
-  const [isLoggedIn, setIsLoggedIn] = useState();
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const traerAuth = () => {
     const auth = getAuth();

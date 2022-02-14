@@ -9,3 +9,14 @@
 .navLinks {
   display: flex;
 }
+
+.direc {
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.input {
+  width: 250px;
+}

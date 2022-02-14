@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { logout } from "../actions/actionLoginRegister";
 import { getSearch } from "../helpers/getData";
 import styles from "../styles/Navbar.module.css";
+import Ubicacion from "./Ubicación";
+import { HiOutlineLocationMarker } from "react-icons/hi";
 
 const Navbar = ({ setMovie, search, setSearch }) => {
   const dispatch = useDispatch();
@@ -37,28 +39,31 @@ const Navbar = ({ setMovie, search, setSearch }) => {
       <Link to="/">
         <img src="https://res.cloudinary.com/dpv7hhumv/image/upload/v1639081600/logo-blockBuster_sac9pr.svg" alt="" className="float" />
       </Link>
-      <div className="">
-        <div className={`${styles.navLinks}`}>
-          <Link className="nav-link text-warning " to="/">
-            Todas
-          </Link>
-          <Link className="nav-link text-warning" to="/mas-valoradas">
-            Más valoradas
-          </Link>
-          <Link className="nav-link text-warning" to="/menos-valoradas">
-            Menos valoradas
-          </Link>
-        </div>
+      <div id="nav-ubicacion">
+        <span className={`${styles.direc} text-warning`}>
+          <HiOutlineLocationMarker /> <Ubicacion />
+        </span>
+      </div>
+      <div className={`${styles.navLinks}`}>
+        <Link className="nav-link text-warning " to="/">
+          Todas
+        </Link>
+        <Link className="nav-link text-warning" to="/mas-valoradas">
+          Más valoradas
+        </Link>
+        <Link className="nav-link text-warning" to="/menos-valoradas">
+          Menos valoradas
+        </Link>
+        <Link className="nav-link text-warning" to="/recomendaciones">
+          Haz tu recomendación
+        </Link>
       </div>
       <div>
         <form onSubmit={handleSubmit} className="d-flex border border-warning">
-          <input type="text" placeholder="Busca tu pelicula aquí" className="text-warning" onChange={handleChange} />
+          <input type="text" placeholder="Busca tu pelicula aquí" className={`text-warning ${styles.input}`} onChange={handleChange} />
           <button className="text-warning btn">Buscar</button>
         </form>
       </div>
-      <Link className="nav-link text-warning" to="/recomendaciones">
-        Haz tu recomendación
-      </Link>
       <button className="btn btn-warning" onClick={() => dispatch(logout())}>
         Logout
       </button>
