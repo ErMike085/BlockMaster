@@ -5,9 +5,13 @@
 const tempoMovies = "https://api.themoviedb.org/3/discover/movie?api_key=a049d6086798142f1ce78897272be805&language=es&page=";
 const searchUno = "https://api.themoviedb.org/3/search/movie?query=";
 const searchDos = "&api_key=a049d6086798142f1ce78897272be805&language=es";
-export const urlVideo = "https://www.youtube.com/watch?v=";
+const peliculasMasValoradas =
+  "https://api.themoviedb.org/3/discover/movie?api_key=a049d6086798142f1ce78897272be805&sort_by=vote_average.desc&page=";
+const peliculasMenosValoradas =
+  "https://api.themoviedb.org/3/discover/movie?api_key=a049d6086798142f1ce78897272be805&sort_by=vote_average.asc&page=";
 const traerVideo = "https://api.themoviedb.org/3/movie/";
 const traerVideo2 = "/videos?api_key=a049d6086798142f1ce78897272be805&language=es";
+export const urlVideo = "https://www.youtube.com/watch?v=";
 
 export const getData = async (page) => {
   const resp = await fetch(tempoMovies + page);
@@ -17,6 +21,18 @@ export const getData = async (page) => {
 
 export const getSearch = async (search) => {
   const resp = await fetch(searchUno + search + searchDos);
+  const data = await resp.json();
+  return data;
+};
+
+export const masValoradas = async (page) => {
+  const resp = await fetch(peliculasMasValoradas + page);
+  const data = await resp.json();
+  return data;
+};
+
+export const menosValoradas = async (page) => {
+  const resp = await fetch(peliculasMenosValoradas + page);
   const data = await resp.json();
   return data;
 };

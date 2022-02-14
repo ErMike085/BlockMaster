@@ -3,6 +3,10 @@
   cursor: pointer;
 }
 
+.Cards {
+  position: relative;
+}
+
 .movieImage {
   border-radius: 10px;
 }

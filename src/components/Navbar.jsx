@@ -1,9 +1,13 @@
 import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { logout } from "../actions/actionLoginRegister";
 import { getSearch } from "../helpers/getData";
 import styles from "../styles/Navbar.module.css";
 
 const Navbar = ({ setMovie, search, setSearch }) => {
+  const dispatch = useDispatch();
+
   const buscarDatos = async () => {
     const datos = await getSearch(search);
     setMovie(datos.results);
@@ -15,6 +19,10 @@ const Navbar = ({ setMovie, search, setSearch }) => {
     } else {
       setSearch(null);
     }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
   };
 
   useEffect(() => {
@@ -34,23 +42,26 @@ const Navbar = ({ setMovie, search, setSearch }) => {
           <Link className="nav-link text-warning " to="/">
             Todas
           </Link>
-          <Link className="nav-link text-warning" to="/MasValoradas">
+          <Link className="nav-link text-warning" to="/mas-valoradas">
             Más valoradas
           </Link>
-          <Link className="nav-link text-warning" to="/MenosValoradas">
+          <Link className="nav-link text-warning" to="/menos-valoradas">
             Menos valoradas
           </Link>
         </div>
       </div>
       <div>
-        <form className="">
+        <form onSubmit={handleSubmit} className="d-flex border border-warning">
           <input type="text" placeholder="Busca tu pelicula aquí" className="text-warning" onChange={handleChange} />
-          <button className="text-warning">Buscar</button>
+          <button className="text-warning btn">Buscar</button>
         </form>
       </div>
       <Link className="nav-link text-warning" to="/recomendaciones">
         Haz tu recomendación
       </Link>
+      <button className="btn btn-warning" onClick={() => dispatch(logout())}>
+        Logout
+      </button>
     </nav>
   );
 };

@@ -21,7 +21,10 @@ const Cards = ({ movie }) => {
     <div>
       <div data-bs-toggle="modal" data-bs-target={`#id${movie.id}`}>
         <div className={`${styles.Cards}`}>
-          <img src={imageUrl} className={styles.movieImage} width={230} height={345} alt={movie.title} />
+          <label className="Calificacion">
+            <span className="estrella">★</span> {movie.vote_average}
+          </label>
+          <img src={imageUrl} className={styles.movieImage} width={230} height={345} alt={movie.title}></img>
         </div>
       </div>
       <Details
@@ -33,6 +36,7 @@ const Cards = ({ movie }) => {
         runtime={movie.runtime}
         release_date={movie.release_date}
         imagenUrl={imageUrl}
+        videoUrl={videoUrl}
       />
     </div>
   );

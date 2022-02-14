@@ -2,6 +2,8 @@ import React from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { loginAsincrono, loginGoogle } from "../actions/actionLoginRegister";
 import { useDispatch } from "react-redux";
+import styles from "../styles/LoginRegister.module.css";
+import { Link } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -12,7 +14,8 @@ const Login = () => {
     dispatch(loginGoogle());
   };
   return (
-    <div className="">
+    <div className={styles.form}>
+      <h1 className={styles.titulo}>LOGIN</h1>
       <Formik
         initialValues={{ email: "", password: "" }}
         validate={(valores) => {
@@ -32,30 +35,40 @@ const Login = () => {
         }}
       >
         {({ errors }) => (
-          <Form>
+          <Form className={styles.form}>
             <div>
-              <label htmlFor="emailLogin">Email</label>
-              <Field type="email" id="emailLogin" name="email" placeholder="Escribe el correo" />
-              <ErrorMessage name="email" component={() => <div>{errors.email}</div>} />
+              <p>Email</p>
+              <Field type="email" className="form-control mb-2" name="email" placeholder="Escribe el correo" />
+              <ErrorMessage name="email" component={() => <div className={styles.alerta}>{errors.email}</div>} />
             </div>
             <div>
-              <label htmlFor="passwordLogin">Contraseña</label>
-              <Field type="password" id="passwordLogin" name="password" placeholder="Escribe la contraseña" />
+              <p>Contraseña</p>
+              <Field type="password" name="password" className="form-control" placeholder="Escribe la contraseña" />
             </div>
-            <div>
-              <button type="submit">Enviar</button>
-              <button type="button" onClick={handleGoogle}>
-                <img
-                  className="google-icon"
-                  src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                  alt="google button"
-                />
-                <p>| Login con google</p>
+            <div className="mt-3 mb-3">
+              <button type="submit" className="btn btn-primary">
+                Enviar
               </button>
             </div>
           </Form>
         )}
       </Formik>
+      <p>También puedes hacer login con</p>
+      <div className="">
+        <button type="button" className={`btn ${styles.google}`} onClick={handleGoogle}>
+          <img
+            className="google-icon me-2"
+            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+            alt="google button"
+          />
+          <p>| google</p>
+        </button>
+      </div>
+      <div>
+        <Link to="/registro" className="text-decoration-none text-white">
+          Sí todavía no tienes cuenta, registrate
+        </Link>
+      </div>
     </div>
   );
 };

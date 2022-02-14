@@ -6,3 +6,18 @@ body {
   margin: 0;
   font-family: Inter;
 }
+
+.Calificacion {
+  font-size: x-large;
+  border: solid yellow;
+  border-radius: 0 50px 50px 0;
+  background-color: rgba(0, 0, 0, 0.623);
+  top: 2rem;
+  padding: 0.2rem 1.5rem;
+  left: 0;
+  color: white;
+  position: absolute;
+}
+.estrella {
+  color: yellow;
+}

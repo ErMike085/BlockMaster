@@ -18,7 +18,7 @@ export const loginGoogle = () => {
 export const loginAsincrono = (email, password) => {
   return () => {
     const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, password).catch((e) => console.log(e));
+    signInWithEmailAndPassword(auth, email, password).catch((e) => alert("Usuario no encontrado, por favor registrate."));
   };
 };
 

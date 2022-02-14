@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "../styles/Details.module.css";
 
 const Details = (movie) => {
-  const { id, overview, title, release_date, imagenUrl, vote_average } = movie;
+  const { id, overview, title, release_date, imagenUrl, vote_average, videoUrl } = movie;
   // const convertirTiempo = (minutos) => {
   //   let horas = Math.floor(minutos / 60);
   //   minutos = minutos % 60;
@@ -42,9 +43,14 @@ const Details = (movie) => {
                 <button type="button" className="btn btn-warning " data-bs-dismiss="modal">
                   Ver después
                 </button>
-                <button type="button" className="btn btn-warning float-end" data-bs-dismiss="modal">
+                <Link
+                  to={`/trailer/${videoUrl.id}`}
+                  type="button"
+                  className="btn btn-warning float-end"
+                  onClick={`data-bs-dismiss="modal"`}
+                >
                   Ver trailer
-                </button>
+                </Link>
               </div>
             </div>
           </div>

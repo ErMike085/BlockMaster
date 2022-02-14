@@ -1,14 +1,16 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { registerAsincrono } from "../actions/actionLoginRegister";
+import styles from "../styles/LoginRegister.module.css";
 
 const Register = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   return (
-    <div className="">
+    <div className={styles.form}>
+      <h1 className={styles.titulo}>Registro</h1>
       <Formik
         initialValues={{ name: "", email: "", password: "" }}
         validate={(valores) => {
@@ -35,25 +37,32 @@ const Register = () => {
         }}
       >
         {({ errors }) => (
-          <Form>
+          <Form className={styles.form}>
             <div>
-              <label htmlFor="nameRegister"></label>
-              <Field type="text" id="nameRegister" name="name" placeholder="Escribe el nombre" />
-              <ErrorMessage name="name" component={() => <div>{errors.name}</div>} />
+              <p>Nombre</p>
+              <Field type="text" className="form-control mb-2" name="name" placeholder="Escribe el nombre" />
+              <ErrorMessage name="name" component={() => <div className={styles.alerta}>{errors.name}</div>} />
             </div>
             <div>
-              <label htmlFor="emailRegister"></label>
-              <Field type="email" id="emailRegister" name="email" placeholder="Escribe el correo" />
-              <ErrorMessage name="email" component={() => <div>{errors.email}</div>} />
+              <p>Email</p>
+              <Field type="email" className="form-control mb-2" name="email" placeholder="Escribe el correo" />
+              <ErrorMessage name="email" component={() => <div className={styles.alerta}>{errors.email}</div>} />
             </div>
             <div>
-              <label htmlFor="passwordRegister"></label>
-              <Field type="password" id="passwordRegister" name="password" placeholder="Escribe la contraseña" required />
+              <p>Contraseña</p>
+              <Field type="password" className="form-control mb-2" name="password" placeholder="Escribe la contraseña" required />
             </div>
-            <button type="submit">Enviar</button>
+            <button type="submit" className="btn btn-primary mb-3">
+              Enviar
+            </button>
           </Form>
         )}
       </Formik>
+      <div>
+        <Link to="/login" className="text-decoration-none text-white">
+          Sí ya tienes cuenta, login aquí
+        </Link>
+      </div>
     </div>
   );
 };
