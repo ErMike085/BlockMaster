@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { buscarVideo } from "../helpers/getData";
-import styles from "../styles/Cards.module.css";
+import { buscarVideo } from "../../helpers/getData";
+import styles from "../../styles/Cards.module.css";
 import Details from "./Details";
 
 const Cards = ({ movie }) => {

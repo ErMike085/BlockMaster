@@ -1,8 +1,8 @@
 import React from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import { loginAsincrono, loginGoogle } from "../actions/actionLoginRegister";
+import { loginAsincrono, loginGoogle } from "../../actions/actionLoginRegister";
 import { useDispatch } from "react-redux";
-import styles from "../styles/LoginRegister.module.css";
+import styles from "../../styles/LoginRegister.module.css";
 import { Link } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 
@@ -23,7 +23,7 @@ const Login = () => {
           if (!valores.email) {
             errores.email = "Por favor ingresa un correo";
           } else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.email)) {
-            errores.email = "El correo solo puede contener letras, numeros, puntos, guiones y guion bajo";
+            errores.email = "El correo solo puede contener letras, numeros, puntos, guiones y guión bajo";
           }
           return errores;
         }}

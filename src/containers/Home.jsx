@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Cards from "../components/Cards";
-import Carrusel from "../components/Carrusel";
+import Cards from "../components/home/Cards";
+import Carrusel from "../components/home/Carrusel";
 import { getData } from "../helpers/getData";
 import styles from "../styles/HomeGrid.module.css";
 

@@ -2,8 +2,8 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { registerAsincrono } from "../actions/actionLoginRegister";
-import styles from "../styles/LoginRegister.module.css";
+import { registerAsincrono } from "../../actions/actionLoginRegister";
+import styles from "../../styles/LoginRegister.module.css";
 
 const Register = () => {
   const navigate = useNavigate();

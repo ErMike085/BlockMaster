@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Cards from "../components/Cards";
+import Cards from "../components/home/Cards";
 import { menosValoradas } from "../helpers/getData";
 import styles from "../styles/HomeGrid.module.css";
 

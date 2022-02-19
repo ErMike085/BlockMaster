@@ -5,6 +5,13 @@
   flex-wrap: wrap;
 }
 
+.detailsContainer2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px solid #ffc107;
+}
+
 p {
   font-family: Inter;
   color: white;
@@ -20,9 +27,21 @@ p {
   margin: 1rem;
 }
 
+.Columns2 {
+  /* max-width: 425px; */
+  width: 100%;
+  margin: 1rem;
+}
+
 .image {
   border-radius: 10px;
   max-height: 300px;
+}
+
+.image2 {
+  border-radius: 10px;
+  max-height: 300px;
+  max-width: 300px;
 }
 
 .list {

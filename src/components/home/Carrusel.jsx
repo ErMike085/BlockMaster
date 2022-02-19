@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Carousel from "react-elastic-carousel";
-import carousel from "../helpers/trailers.json";
-import "../styles/Carrusel.css";
+import carousel from "../../helpers/trailers.json";
+import "../../styles/Carrusel.css";
 
 class Carrusel extends Component {
   render() {

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { logout } from "../actions/actionLoginRegister";
-import { getSearch } from "../helpers/getData";
-import styles from "../styles/Navbar.module.css";
+import { logout } from "../../actions/actionLoginRegister";
+import { getSearch } from "../../helpers/getData";
+import styles from "../../styles/Navbar.module.css";
 import Ubicacion from "./Ubicación";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 

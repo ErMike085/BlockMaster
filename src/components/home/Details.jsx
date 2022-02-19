@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "../styles/Details.module.css";
+import styles from "../../styles/Details.module.css";
 
 const Details = (movie) => {
   const { id, overview, title, release_date, imagenUrl, vote_average, videoUrl } = movie;

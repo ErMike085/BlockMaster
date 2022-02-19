@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Trailers from "../components/Trailers";
+import Navbar from "../components/home/Navbar";
+import Trailers from "../components/home/Trailers";
 import Home from "../containers/Home";
 import MasValoradas from "../containers/MasValoradas";
 import MenosValoradas from "../containers/MenosValoradas";
